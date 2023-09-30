@@ -1,5 +1,195 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;600&display=swap');
 
+.sidebar {
+    background-color: #0D562A;
+    height: 100vh;
+}
+
+.content {
+    background-color: #F5F5F5;
+    height: 100vh;
+}
+
+.sidebar img {
+    width: 100px;
+}
+
+.pemerintah h1 {
+    color: white;
+    font-size: 18px;
+    font-weight: 501;
+}
+
+.kategori h1{
+    color: #FFDE33;
+    font-size: 18px;
+    font-weight: 501;
+}
+
+#pelayanan {
+    width: 100%;
+    height: 80px;
+    font-weight: 501;
+    border-radius: 0%;
+    background-color: #0D562A;
+    border: none;
+}
+
+.kategori {
+    margin-top: 60px;
+    margin-left: 10px;
+}
+
+#layanan {
+    width: 20px;
+}
+
+#transaksi {
+    width: 20px;
+}
+
+#bantuan {
+    width: 20px;
+}
+
+.nama {
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.5);
+    background-color: white;
+    height: 100px;
+    width: 100%;
+}
+
+.selamat {
+    font-weight: 501;
+    font-size: 28px;
+    padding-top: 32px;
+    color: #327A6D;
+}
+
+.memilih {
+    font-weight: 501;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+.surat {
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.5);
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+
+.surat-selamat {
+    background-color: #0D562A;
+    width: 35%;
+    height: 14%;
+    margin-top: 60px;
+    padding-bottom: 30px;
+    margin-left: 90px;
+}
+
+.alif {
+    padding-top: 18px;
+    margin-left: 37px;
+}
+
+.cetak {
+    font-weight: 501;
+    font-size: 32px;
+    color: #327A6D;
+}
+
+.cetak-selamat {
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-left: 58px;
+}
+
+.buat-surat {
+    font-weight: 501;
+    font-size: 17px;
+    color: #858585;
+}
+
+.buat-selamat {
+    font-size: 20px;
+    color: #ffffff;
+    margin-left: 58px;
+}
+
+#iconsurat {
+    width: 100px;
+}
+
+#logoluwuk {
+    width: 95px;
+}
+
+.selamatdatang {
+    font-size: 75px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-right: 50px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.mandi {
+    font-size: 50px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-right: 50px;
+    text-align: right;
+}
+
+#gubernur {
+    width: 33%;
+    margin-left: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#pilih {
+    background-color: #0D562A;
+    color: white;
+    width: 300px;
+    height: 60px;
+}
+
+.pilihan {
+    font-weight: 501;
+    font-size: 20px;
+}
+
+#kembali {
+    background-color: #0D562A;
+    color: white;
+    width: 150px;
+    height: 75px;
+}
+
+.kembali {
+    padding-top: 30px;
+}
+
+#iconpajak {
+    width: 100px;
+}
+
+#iconbansos {
+    width: 100px;
+}
+
+#icondesa {
+    width: 100px;
+}
 
 .digides-digital {
     font-weight: bold;
@@ -8,6 +198,17 @@
 
 #icon {
     width: 15px;
+}
+
+#iconpanah {
+    width: 40px;
+    margin-right: 50px;
+    margin-left: 25px;
+}
+
+#iconsawah {
+    width: 40px;
+    margin-left: 20px;
 }
 
 #ktp {
@@ -30,6 +231,21 @@ body {
     background-size: cover;
 }
 
+.bg-sawah{
+    width: 1920px;
+    height: 924px;
+    background-image: url('../../img/sawah.png');
+    background-size: cover;
+}
+
+.bg-selamat{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #0d562a52, #20551a52, #ffc80052), url('../../img/kampungluwu.png');
+    background-position: center;
+    background-size: cover;
+}
+
 #bg-hijau {
     height: 100%;
     width: 100%;
@@ -42,6 +258,17 @@ body {
     top: 0;
     left: 0;
 }
+
+.memulai {
+    font-size: 45px;
+    color: #0D562A;
+}
+
+.memulaisawah {
+    font-size: 45px;
+    color: #ffffff;
+}
+
 
 #logoluwu{
     width: 240px;
@@ -59,8 +286,18 @@ body {
     background-color: #F5F5F5;
 }
 
+.form-bansos div input{
+    width: 1500px;
+    height: 50px;
+    background-color: #F5F5F5;
+}
+
 .form-masuk div input::placeholder{
     font-size: 22px;
+}
+
+.form-bansos div input::placeholder{
+    font-size: 15px;
 }
 
 .tombol-masuk {
@@ -80,6 +317,34 @@ body {
     color: #0D562A;
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     align-self: center;
+}
+
+.namabutton {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.5);
+    background-color: white;
+    height: 100px;
+    width: 100%;
+}
+
+.namaselamat {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    height: 100px;
+    width: 100%;
+}
+
+.namasawah {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #0D562A;
+    height: 100px;
+    width: 100%;
 }
 
 #scans {
