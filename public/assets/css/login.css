@@ -82,6 +82,15 @@
     padding-left: 40px;
 }
 
+@keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%); /* Menggeser elemen keluar dari layar */
+    }
+  }
+
 .surat-selamat {
     background-color: #0D562A;
     width: 35%;
@@ -153,8 +162,8 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 1;
-}
+    z-index: 1;   
+    }
 
 #pilih {
     background-color: #0D562A;
@@ -209,6 +218,7 @@
 #iconsawah {
     width: 40px;
     margin-left: 20px;
+    cursor: pointer;
 }
 
 #ktp {
@@ -236,6 +246,18 @@ body {
     height: 924px;
     background-image: url('../../img/sawah.png');
     background-size: cover;
+}
+
+#bg-video{
+    width: 1920px;
+    height: 924px;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 .bg-selamat{
