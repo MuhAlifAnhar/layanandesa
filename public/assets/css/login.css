@@ -82,15 +82,6 @@
     padding-left: 40px;
 }
 
-@keyframes slideOut {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(100%); /* Menggeser elemen keluar dari layar */
-    }
-  }
-
 .surat-selamat {
     background-color: #0D562A;
     width: 35%;
@@ -248,16 +239,50 @@ body {
     background-size: cover;
 }
 
-#bg-video{
-    width: 1920px;
-    height: 924px;
-    object-fit: cover;
+.fullscreen-bg{
     position: fixed;
-    left: 0;
-    right: 0;
     top: 0;
+    right: 0;
     bottom: 0;
-    z-index: -1;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg_video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fullscreen-bg_playlist{
+	display: none;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .fullscreen-bg_video{
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .fullscreen-b__video{
+        width: 300%;
+        left: -100%;
+    }
+}
+
+@media (max-width: 767px){
+    .fullscreen-bg{
+        background: url('../../img/sawah.png') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg_video{
+        display: none;
+    }
 }
 
 .bg-selamat{
