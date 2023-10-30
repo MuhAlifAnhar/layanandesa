@@ -1,5 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;600&display=swap');
 
+.beranda-masuk {
+    color: #ffffff;
+}
+
+.animate-left {
+    position: absolute;
+    animation: slideLeft 5s ease-in-out;
+}
+
+.animate-right {
+    animation: slideRight 2s ease-in-out;
+}
+
+.animate-right-2 {
+    animation: anhar 2s ease-in-out;
+}
+
+@keyframes anhar {
+    0% {
+        opacity: 0;
+        transform: translateX(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        left: 10%; /* Posisi awal (kanan layar) */
+    }
+    25% {
+        opacity: 1;
+        left: 0; /* Posisi akhir (kiri layar) */
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.selamatdatang {
+    text-align: right;
+    font-size: 75px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-right: 50px;
+    margin-top: 300px;
+    margin-bottom: 30px;
+}
+
+.mandi {
+    text-align: right;
+    font-size: 50px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-right: 50px;
+}
+
 .sidebar {
     background-color: #0D562A;
     height: 100vh;
@@ -116,7 +184,7 @@
 }
 
 .buat-selamat {
-    font-size: 20px;
+    font-size: 19px;
     color: #ffffff;
     margin-left: 58px;
 }
@@ -127,24 +195,6 @@
 
 #logoluwuk {
     width: 95px;
-}
-
-.selamatdatang {
-    font-size: 75px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-right: 50px;
-    margin-top: 100px;
-    margin-bottom: 30px;
-    text-align: right;
-}
-
-.mandi {
-    font-size: 50px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-right: 50px;
-    text-align: right;
 }
 
 #gubernur {

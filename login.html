@@ -65,7 +65,7 @@
                   placeholder="Masukkan No KTP" class="form-control"
                 />
               </div>
-              <button type="submit" class="btn tombol-masuk">Masuk</button>
+              <button type="submit" class="btn tombol-masuk"><a href="beranda.html" class="beranda-masuk">Masuk</a></button>
             </form>
           </div>
           <div class="scan text-center mt-5">
@@ -85,7 +85,6 @@
                   <img src="public/img/icon.png" id="icon" alt="icon" class="mr-2">
                   <p class="m-0">2023 Powered by <span id="pt">PT Digital Desa Indonesia</span></p>
               </div>
-          
             </div>
             </a>
           </div>
@@ -108,5 +107,28 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script>
+      var idleTime = 0;
+
+// Fungsi untuk mengatur waktu idle dan mengarahkan kembali ke halaman awal
+function resetIdleTime() {
+  idleTime = 0;
+}
+
+// Event listener untuk mendeteksi aktivitas mouse
+document.addEventListener("mousemove", resetIdleTime);
+
+// Event listener untuk mendeteksi aktivitas keyboard
+document.addEventListener("keypress", resetIdleTime);
+
+// Fungsi untuk memeriksa waktu idle setiap detik
+setInterval(function() {
+  idleTime++;
+  // Jika tidak ada aktivitas selama 1 menit (60 detik), arahkan kembali ke halaman awal
+  if (idleTime >= 60) {
+      window.location.href = "video.html"; // Ganti "halaman-awal.html" dengan URL halaman awal Anda
+  }
+}, 1000); // 1000 milidetik = 1 detik
+  </script>
   </body>
 </html>

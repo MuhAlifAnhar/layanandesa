@@ -95,5 +95,28 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script>
+      var idleTime = 0;
+
+// Fungsi untuk mengatur waktu idle dan mengarahkan kembali ke halaman awal
+function resetIdleTime() {
+  idleTime = 0;
+}
+
+// Event listener untuk mendeteksi aktivitas mouse
+document.addEventListener("mousemove", resetIdleTime);
+
+// Event listener untuk mendeteksi aktivitas keyboard
+document.addEventListener("keypress", resetIdleTime);
+
+// Fungsi untuk memeriksa waktu idle setiap detik
+setInterval(function() {
+  idleTime++;
+  // Jika tidak ada aktivitas selama 1 menit (60 detik), arahkan kembali ke halaman awal
+  if (idleTime >= 60) {
+      window.location.href = "video.html"; // Ganti "halaman-awal.html" dengan URL halaman awal Anda
+  }
+}, 1000); // 1000 milidetik = 1 detik
+  </script>
   </body>
 </html>
