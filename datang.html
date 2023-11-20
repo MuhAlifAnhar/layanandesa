@@ -41,7 +41,7 @@
                 <div class="namaselamat d-flex flex-row-reverse align-items-center mb-4 m-0 p-0">
                     <div data-animate="animate-right" class="digides-digital animate-right">
                         <div class="d-flex flex-row-reverse justify-content-center align-items-center mx-auto p-2">
-                            <a href="login.html"><img src="public/img/panah.png" id="iconpanah" alt="icon" class="mr-2"></a>
+                            <a href="login.php"><img src="public/img/panah.png" id="iconpanah" alt="icon" class="mr-2"></a>
                             <p class="memulai font-weight-bold m-0 ">KLIK UNTUK MEMULAI</p>
                         </div>
                     </div>
@@ -63,5 +63,24 @@
  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
  crossorigin="anonymous"></script>
     <script src="datang.js"></script>
+    <script>
+        // Create a new SpeechSynthesisUtterance object
+        let speech = new SpeechSynthesisUtterance();
+    
+        // Set the text to be spoken
+        speech.text = "Selamat datang di layanan mandiri desa balantang! Kami dengan senang hati menyambut Anda untuk menikmati layanan mandiri desa balantang yang kami sediakan di sini. Untuk memberikan kenyamanan dan kemudahan bagi warga desa balantang";
+    
+        // Menetapkan bahasa untuk sintesis suara (bahasa Indonesia)
+        speech.lang = "id-ID";
+    
+        // Speak the text when the page loads
+        window.speechSynthesis.speak(speech);
+
+        // Event listener untuk mendeteksi perpindahan halaman
+        window.addEventListener('beforeunload', function() {
+        // Menghentikan sintesis suara saat perpindahan halaman
+        window.speechSynthesis.cancel();
+    });
+    </script>
 </body>
 </html>

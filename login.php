@@ -1,3 +1,40 @@
+<?php
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the form data
+    $username = $_POST["username"];
+    $nik = $_POST["nik"];
+
+    // Establish a connection to the database
+    $conn = mysqli_connect("localhost", "root", "", "contoh_database");
+
+    // Check the connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Prepare the SQL query to check user credentials
+    $sql = "SELECT * FROM users WHERE username='$username' AND nik='$nik'";
+    $result = mysqli_query($conn, $sql);
+
+    // Check if a matching record is found in the database
+    if (mysqli_num_rows($result) == 1) {
+        $user = mysqli_fetch_assoc($result);
+        session_start();
+        $_SESSION['username'] = $user['username'];
+        // User is authenticated, redirect to beranda.html
+        header("Location: beranda.php");
+        exit();
+    } else {
+        // Invalid credentials, display an error message
+        echo "<strong>Nama atau No.KTP anda salah!</strong>";
+    }
+
+    // Close the database connection
+    mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,22 +87,24 @@
           <div class="container">
             <h1 class="text-center font-weight-bold mb-5">Selamat Datang</h1>
           <div class="d-flex justify-content-center">
-            <form class="form-masuk">
+            <form class="form-masuk" id="loginForm" method="post" action="">
               <div class="form-group">
                 <input
                   type="text"
+                  name="username"
                   id="username"
-                  placeholder="Masukkan Nama (Sesuai KTP)" class="form-control"
+                  placeholder="Masukkan Nama (Sesuai KTP)" class="form-control" required
                 />
               </div>
               <div class="form-group">
                 <input
                   type="number"
+                  name="nik"
                   id="nik"
-                  placeholder="Masukkan No KTP" class="form-control"
+                  placeholder="Masukkan No KTP" class="form-control" required
                 />
               </div>
-              <button type="submit" class="btn tombol-masuk"><a href="beranda.html" class="beranda-masuk">Masuk</a></button>
+              <button type="submit" class="btn tombol-masuk">Masuk</button>
             </form>
           </div>
           <div class="scan text-center mt-5">
@@ -108,11 +147,11 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      var idleTime = 0;
+        var idleTime = 0;
 
 // Fungsi untuk mengatur waktu idle dan mengarahkan kembali ke halaman awal
 function resetIdleTime() {
-  idleTime = 0;
+    idleTime = 0;
 }
 
 // Event listener untuk mendeteksi aktivitas mouse
@@ -123,12 +162,12 @@ document.addEventListener("keypress", resetIdleTime);
 
 // Fungsi untuk memeriksa waktu idle setiap detik
 setInterval(function() {
-  idleTime++;
-  // Jika tidak ada aktivitas selama 1 menit (60 detik), arahkan kembali ke halaman awal
-  if (idleTime >= 60) {
-      window.location.href = "video.html"; // Ganti "halaman-awal.html" dengan URL halaman awal Anda
-  }
+    idleTime++;
+    // Jika tidak ada aktivitas selama 1 menit (60 detik), arahkan kembali ke halaman awal
+    if (idleTime >= 60) {
+        window.location.href = "video.html"; // Ganti "halaman-awal.html" dengan URL halaman awal Anda
+    }
 }, 1000); // 1000 milidetik = 1 detik
-  </script>
+    </script>
   </body>
 </html>

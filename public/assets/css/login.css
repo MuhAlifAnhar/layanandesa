@@ -4,6 +4,14 @@
     color: #ffffff;
 }
 
+.full-screen-preview_frame {
+    width: 100%; /* Mengisi lebar frame secara penuh */
+    height: 100vh; /* Mengisi tinggi frame secara penuh sesuai tinggi layar viewport */
+    border: none; /* Menghilangkan border */
+    resize: none; /* Menonaktifkan kemampuan resize */
+    display: block; /* Membuat elemen menjadi blok */
+}
+
 .animate-left {
     position: absolute;
     animation: slideLeft 5s ease-in-out;
@@ -93,6 +101,7 @@
     font-size: 18px;
     font-weight: 501;
 }
+/* } CLASS */
 
 #pelayanan {
     width: 100%;

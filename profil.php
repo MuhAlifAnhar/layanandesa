@@ -1,3 +1,43 @@
+<?php
+// Koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "contoh_database";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi Gagal: " . $conn->connect_error);
+}
+
+// Start the session to access session data
+session_start();
+
+// Check if the username is set in the session data
+if(isset($_SESSION['username'])){
+    // Get the username from the session
+    $username = $_SESSION['username'];
+
+    // Query untuk mendapatkan data pengguna dari database
+    $sql = "SELECT username FROM users WHERE username = '$username'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Ambil data pengguna
+        $row = $result->fetch_assoc();
+        $nama_lengkap = $row["username"];
+    } else {
+        $nama_lengkap = "username";
+    }
+} else {
+    // Redirect the user to the login page if the username is not set in the session data
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,7 +70,7 @@
                     </div>
                     <div class="mt-4">
                         <div class="layanan d-flex justify-content-center align-items-center">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="pelayanan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="pelayanan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="pelayananUmum()">
                                 <img src="public/img/pelayanan.png" id="layanan" alt="layanan" class="mr-2"> Pelayanan Umum
                             </button>
                         </div>
@@ -44,17 +84,42 @@
                                 <img src="public/img/bantuan.png" id="bantuan" alt="bantuan" class="mr-2"> Bantuan
                             </button>
                         </div>
+                        <div>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="pelayanan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="cekTagihanPBB()">
+                                <img src="public/img/bantuan.png" id="bantuan" alt="bantuan" class="mr-2"> Cek Tagihan PBB
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="pelayanan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="cekPangan()">
+                                <img src="public/img/bantuan.png" id="bantuan" alt="bantuan" class="mr-2"> Cek Harga Pangan
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="pelayanan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="webgis()">
+                                <img src="public/img/bantuan.png" id="bantuan" alt="bantuan" class="mr-2"> Webgis Digital Desa
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="pelayanan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="perizinan()">
+                                <img src="public/img/bantuan.png" id="bantuan" alt="bantuan" class="mr-2"> Perizinan Terpadu
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="pelayanan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="pdam()">
+                                <img src="public/img/bantuan.png" id="bantuan" alt="bantuan" class="mr-2"> Cek Tagihan PDAM
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-10 m-0 p-0">
                 <div class="content">
                     <div class="nama m-0 p-0">
-                        <h1 class="selamat pl-4">Selamat Datang, Pak H. Baharuddin!</h1>
+                        <h1 class="selamat pl-4">Selamat Datang, <span id="username"><?php echo $nama_lengkap; ?></span>!</h1>
                     </div>
                     <div>
                         <div class="kembali pl-3 mb-3">
-                            <a type="button" class="btn tombol-scans rounded d-flex align-items-center justify-content-center" id="kembali">
+                            <a href="beranda.php" type="button" class="btn tombol-scans rounded d-flex align-items-center justify-content-center" id="kembali">
                                 <h1 class="pilihan"><i class="fa-solid fa-arrow-left"></i> Kembali</h1>
                             </a>
                         </div>
@@ -154,5 +219,61 @@ setInterval(function() {
     }
 }, 1000); // 1000 milidetik = 1 detik
     </script>
+    <script>
+    // Create a new SpeechSynthesisUtterance object
+    let speech = new SpeechSynthesisUtterance();
+
+    // Set the text to be spoken
+    speech.text = "Silahkan mengisi form yang sudah di tentukan dengan benar";
+
+    // Menetapkan bahasa untuk sintesis suara (bahasa Indonesia)
+    speech.lang = "id-ID";
+
+    // Speak the text when the page loads
+    window.speechSynthesis.speak(speech);
+
+    // Event listener untuk mendeteksi perpindahan halaman
+    window.addEventListener('beforeunload', function() {
+    // Menghentikan sintesis suara saat perpindahan halaman
+    window.speechSynthesis.cancel();
+});
+</script>
+<script>
+    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+    function cekTagihanPBB() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "pbb.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+        // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+        function cekPangan() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "pangan.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+    function webgis() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "webgis.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+    function perizinan() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "perizinan.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+     // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+     function pdam() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "pdam.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+    function pelayananUmum() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "beranda.php"; // Ganti dengan URL halaman yang sesuai
+    }
+</script>
 </body>
 </html>
