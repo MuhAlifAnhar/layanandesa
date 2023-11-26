@@ -13,7 +13,7 @@ setInterval(function() {
     if (idleTime >= 60) {
         window.location.href = "video.html";
     }
-}, 1000);
+}, 10000);
 
 var idleTimee = 0;
 
@@ -26,10 +26,10 @@ document.addEventListener("keypress", resetIdleTimee);
 
 setInterval(function() {
     idleTimee++;
-    if (idleTimee >= 10) {
+    if (idleTimee >= 30) {
         window.location.href = "datang.html";
     }
-}, 1000);
+}, 10000);
 
 });
 

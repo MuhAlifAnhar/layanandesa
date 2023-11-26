@@ -48,8 +48,7 @@ if(isset($_SESSION['username'])){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="public/assets/css/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>Surat</title>
+    <title>Beranda</title>
   </head>
   <body>
     <div class="container-fluid">
@@ -122,76 +121,8 @@ if(isset($_SESSION['username'])){
                     <div class="nama m-0 p-0">
                         <h1 class="selamat pl-4">Selamat Datang, <span id="username"><?php echo $nama_lengkap; ?></span>!</h1>
                     </div>
-                    <div>
-                        <div class="kembali pl-3 mb-3">
-                            <a href="beranda.php" type="button" class="btn tombol-scans rounded d-flex align-items-center justify-content-center" id="kembali">
-                                <h1 class="pilihan"><i class="fa-solid fa-arrow-left"></i> Kembali</h1>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="container-fluid">
-                        <div class="surat rounded mb-4">
-                            <div class="row">
-                                <div class="col-1">
-                                    <div>
-                                        <img src="public/img/surat.png" id="iconsurat" alt="surat" class="mr-2">
-                                    </div>
-                                </div>
-                                <div class="col-7 d-flex align-items-center">
-                                    <div>
-                                        <h1 class="cetak font-weight-bold">CETAK SURAT</h1>
-                                        <h1 class="buat-surat">Buat surat SKCK, Surat Usaha, Surat Keterangan Pindah, Surat Keterangan lain kurang dari 1 menit</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="garis" class="mx-auto mb-5"></div>
-                            <form class="form-bansos">
-                                <div class="form-group">
-                                  <input
-                                    type="text"
-                                    id="username"
-                                    placeholder="Masukkan Nama (Sesuai KTP)" class="form-control font-weight-bold"
-                                  />
-                                </div>
-                                <div class="form-group">
-                                    <input
-                                      type="text"
-                                      id="username"
-                                      placeholder="Masukkan Nama (Sesuai KTP)" class="form-control font-weight-bold"
-                                    />
-                                  </div>
-                                  <div class="form-group">
-                                    <input
-                                      type="text"
-                                      id="username"
-                                      placeholder="Masukkan Nama (Sesuai KTP)" class="form-control font-weight-bold"
-                                    />
-                                  </div>
-                                <div class="form-group">
-                                  <input
-                                    type="number"
-                                    id="nik"
-                                    placeholder="Masukkan No KTP" class="form-control font-weight-bold"
-                                  />
-                                </div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <div>
-                                        <a href="beranda.html" type="button" class="btn tombol-scans rounded d-flex align-items-center justify-content-center" id="pilih">
-                                            <h1 class="pilihan">Masuk</h1>
-                                        </a>
-                                    </div>
-                                </div>
-                              </form>
-                        </div>
-                    </div>
-                    <div class="namabutton d-flex justify-content-center align-items-center m-0 p-0">
-                        <div class="digides-digital">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="public/img/icon.png" id="icon" alt="icon" class="mr-2">
-                                <p class="m-0">2023 Powered by <span id="pt">PT Digital Desa Indonesia</span></p>
-                            </div>
-                        </div>
-                    </div>
+                    <iframe class="full-screen-preview_frame" src="https://online.digitaldesa.id/99.99.99.9999/pelayanan/login" name="preview-frame" frameborder="0" noresize="noresize" data-view="fullScreenPreview" allow="geolocation 'self'; autoplay 'self'">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -202,6 +133,43 @@ if(isset($_SESSION['username'])){
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
+    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+    function pelayananUmum() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "beranda.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+        // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+        function cekTagihanPBB() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "pbb.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+     // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+     function cekPangan() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "pangan.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+    function webgis() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "webgis.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+    function perizinan() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "perizinan.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+        // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+        function pdam() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "pdam.php"; // Ganti dengan URL halaman yang sesuai
+    }
+</script>
+<script>
         var idleTime = 0;
 
 // Fungsi untuk mengatur waktu idle dan mengarahkan kembali ke halaman awal
@@ -229,7 +197,7 @@ setInterval(function() {
     let speech = new SpeechSynthesisUtterance();
 
     // Set the text to be spoken
-    speech.text = "Silahkan mengisi form yang sudah di tentukan dengan benar";
+    speech.text = "Selamat datang, <?php echo $nama_lengkap; ?>! Di pelayanan digital desa";
 
     // Menetapkan bahasa untuk sintesis suara (bahasa Indonesia)
     speech.lang = "id-ID";
@@ -243,48 +211,5 @@ setInterval(function() {
     window.speechSynthesis.cancel();
 });
 </script>
-<script>
-    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
-    function cekTagihanPBB() {
-        // Redirect ke halaman cek tagihan PBB
-        window.location.href = "pbb.php"; // Ganti dengan URL halaman yang sesuai
-    }
-
-        // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
-        function cekPangan() {
-        // Redirect ke halaman cek tagihan PBB
-        window.location.href = "pangan.php"; // Ganti dengan URL halaman yang sesuai
-    }
-
-    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
-    function webgis() {
-        // Redirect ke halaman cek tagihan PBB
-        window.location.href = "webgis.php"; // Ganti dengan URL halaman yang sesuai
-    }
-
-    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
-    function perizinan() {
-        // Redirect ke halaman cek tagihan PBB
-        window.location.href = "perizinan.php"; // Ganti dengan URL halaman yang sesuai
-    }
-
-     // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
-     function pdam() {
-        // Redirect ke halaman cek tagihan PBB
-        window.location.href = "pdam.php"; // Ganti dengan URL halaman yang sesuai
-    }
-
-    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
-    function pelayananUmum() {
-        // Redirect ke halaman cek tagihan PBB
-        window.location.href = "beranda.php"; // Ganti dengan URL halaman yang sesuai
-    }
-
-    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
-    function andi() {
-        // Redirect ke halaman cek tagihan PBB
-        window.location.href = "andi.php"; // Ganti dengan URL halaman yang sesuai
-    }
-</script>
-  </body>
+</body>
 </html>

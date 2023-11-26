@@ -109,6 +109,11 @@ if(isset($_SESSION['username'])){
                                 <img src="public/img/bantuan.png" id="bantuan" alt="bantuan" class="mr-2"> Cek Tagihan PDAM
                             </button>
                         </div>
+                        <div>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="pelayanan" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="andi()">
+                                <img src="public/img/bantuan.png" id="bantuan" alt="bantuan" class="mr-2"> Pelayanan Digital Desa
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -273,6 +278,12 @@ setInterval(function() {
     function pelayananUmum() {
         // Redirect ke halaman cek tagihan PBB
         window.location.href = "beranda.php"; // Ganti dengan URL halaman yang sesuai
+    }
+
+    // Fungsi untuk menangani klik tombol "Cek Tagihan PBB"
+    function andi() {
+        // Redirect ke halaman cek tagihan PBB
+        window.location.href = "andi.php"; // Ganti dengan URL halaman yang sesuai
     }
 </script>
 </body>
